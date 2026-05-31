@@ -1,0 +1,714 @@
+/* ═══════════════════════════════════════════
+   Auth.css — shared styles for Login & Signup
+   Matches Cheqin Home.css design system
+═══════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap');
+
+/* ── Root ── */
+:root {
+  --blue: #1A47E5;
+  --blue-dim: #1238c4;
+  --green: #16a34a;
+  --ink: #0a0a0a;
+  --ink-2: #3a3a3a;
+  --ink-3: #6b6b6b;
+  --surface: #f5f4f0;
+  --surface-2: #eeecea;
+  --border: #d8d6d0;
+  --white: #ffffff;
+  --radius: 10px;
+  --aside-w: 420px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+/* ── Layout ── */
+.cq-auth-wrap {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Aside ── */
+.cq-auth-aside {
+  width: var(--aside-w);
+  flex-shrink: 0;
+  background: var(--ink);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 2.5rem 2rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.cq-auth-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: auto;
+}
+
+.cq-auth-brand {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.6rem;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+
+.cq-auth-aside-body {
+  margin: auto 0 2rem;
+}
+
+.cq-auth-aside-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+}
+
+.cq-auth-aside-headline {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(2rem, 3.2vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.cq-auth-aside-headline .accent {
+  color: var(--blue);
+  font-style: italic;
+}
+
+.cq-auth-aside-headline .accent-green {
+  color: #4ade80;
+  font-style: italic;
+}
+
+.cq-auth-aside-sub {
+  font-size: 0.925rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.55);
+  max-width: 320px;
+}
+
+/* Stats row */
+.cq-auth-aside-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.cq-auth-stat-num {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.4rem;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.cq-auth-stat-label {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cq-auth-stat-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.12);
+  flex-shrink: 0;
+}
+
+/* Perks list */
+.cq-auth-perks {
+  list-style: none;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.cq-auth-perks li {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cq-perk-check {
+  color: #4ade80;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* Testimonial */
+.cq-auth-aside-quote {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.25rem;
+  margin-top: 0;
+}
+
+.cq-auth-aside-quote p {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.5;
+  margin-bottom: 0.4rem;
+}
+
+.cq-auth-aside-quote span {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ── Main ── */
+.cq-auth-main {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 2rem;
+  overflow-y: auto;
+}
+
+.cq-auth-form-wrap {
+  width: 100%;
+  max-width: 440px;
+  padding-top: 1rem;
+}
+
+.cq-auth-form-header {
+  margin-bottom: 2rem;
+}
+
+.cq-auth-form-header h1 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 0.35rem;
+}
+
+.cq-auth-form-header p {
+  font-size: 0.9rem;
+  color: var(--ink-3);
+}
+
+/* ── Form fields ── */
+.cq-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.cq-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cq-field label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+
+.cq-field input,
+.cq-field select {
+  height: 44px;
+  padding: 0 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.cq-field input::placeholder {
+  color: #b0aea8;
+}
+
+.cq-field input:focus,
+.cq-field select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(26,71,229,0.1);
+}
+
+.cq-field-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cq-field-link {
+  font-size: 0.8rem;
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cq-field-link:hover {
+  text-decoration: underline;
+}
+
+.cq-field-hint {
+  font-size: 0.75rem;
+  color: var(--ink-3);
+}
+
+/* Phone prefix */
+.cq-input-prefix-wrap {
+  display: flex;
+  align-items: stretch;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--white);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.cq-input-prefix-wrap:focus-within {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(26,71,229,0.1);
+}
+
+.cq-input-prefix {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  background: var(--surface-2);
+  border-right: 1.5px solid var(--border);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.cq-input-prefix-wrap input {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  flex: 1;
+}
+
+.cq-input-prefix-wrap input:focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/* Field pair */
+.cq-field-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+/* Checkbox */
+.cq-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+.cq-checkbox-row input[type="checkbox"] {
+  margin-top: 2px;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--blue);
+  cursor: pointer;
+}
+
+/* Select arrow */
+.cq-field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b6b6b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+/* Business type chips */
+.cq-biz-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.cq-biz-type-btn {
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+
+.cq-biz-type-btn:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.cq-biz-type-btn.selected {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+/* ── Buttons ── */
+.btn-auth-primary {
+  height: 48px;
+  width: 100%;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--blue);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.925rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  letter-spacing: -0.01em;
+}
+
+.btn-auth-primary:hover {
+  background: var(--blue-dim);
+}
+
+.btn-auth-primary:active {
+  transform: scale(0.99);
+}
+
+.btn-auth-outline {
+  height: 48px;
+  flex: 1;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--ink-2);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.btn-auth-outline:hover {
+  border-color: var(--ink-3);
+}
+
+.cq-btn-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.cq-btn-row .btn-auth-primary {
+  flex: 2;
+  width: auto;
+}
+
+/* ── Divider ── */
+.cq-auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  color: var(--ink-3);
+  font-size: 0.8rem;
+}
+
+.cq-auth-divider::before,
+.cq-auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── OAuth ── */
+.cq-oauth-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.btn-oauth {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.btn-oauth:hover {
+  border-color: var(--ink-3);
+  background: var(--surface);
+}
+
+/* ── Switch ── */
+.cq-auth-switch {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  margin-top: 1.25rem;
+}
+
+.cq-auth-switch a {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cq-auth-switch a:hover {
+  text-decoration: underline;
+}
+
+/* ── Step indicator ── */
+.cq-steps {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.cq-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.cq-step-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink-3);
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.cq-step.active .cq-step-dot {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+.cq-step.done .cq-step-dot {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--white);
+}
+
+.cq-step-label {
+  font-size: 0.78rem;
+  color: var(--ink-3);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.cq-step.active .cq-step-label {
+  color: var(--ink);
+}
+
+.cq-step.done .cq-step-label {
+  color: var(--ink-3);
+}
+
+.cq-step-line {
+  flex: 1;
+  min-width: 20px;
+  height: 1px;
+  background: var(--border);
+  margin: 0 6px;
+}
+
+/* ── Success screen ── */
+.cq-auth-success {
+  text-align: center;
+  padding: 2rem 0 1rem;
+}
+
+.cq-success-icon {
+  margin-bottom: 1.5rem;
+}
+
+.cq-auth-success h1 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 2.4rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.cq-auth-success p {
+  font-size: 0.925rem;
+  color: var(--ink-3);
+  line-height: 1.6;
+  max-width: 320px;
+  margin: 0 auto 2rem;
+}
+
+.cq-success-links {
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.cq-success-links a {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cq-success-links a:hover {
+  text-decoration: underline;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .cq-auth-aside {
+    display: none;
+  }
+
+  .cq-auth-main {
+    padding: 2rem 1.25rem;
+    align-items: flex-start;
+  }
+
+  .cq-auth-form-wrap {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .cq-field-pair {
+    grid-template-columns: 1fr;
+  }
+
+  .cq-oauth-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Signup responsive fixes ── */
+@media (max-width: 640px) {
+
+  /* Step indicator — stack dots tighter on small screens */
+  .cq-steps {
+    gap: 0;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .cq-step-label {
+    font-size: 0.65rem;
+  }
+
+  .cq-step-line {
+    flex: 1;
+  }
+
+  /* Name field pair — stack vertically on mobile */
+  .cq-field-pair {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Business type buttons — 2 columns instead of wrapping awkwardly */
+  .cq-biz-types {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Back + Submit button row — stack vertically */
+  .cq-btn-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cq-btn-row .btn-auth-outline,
+  .cq-btn-row .btn-auth-primary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* OAuth buttons — stack vertically */
+  .cq-oauth-row {
+    flex-direction: column;
+  }
+
+  /* Success screen links */
+  .cq-success-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .cq-success-links span {
+    display: none;
+  }
+}
